@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Healthcare Assistant Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Smart Health Portal</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#symptom-checker" class="nav-link">Symptom Checker</a></li>
+            <li><a href="#bmi" class="nav-link">BMI Calculator</a></li>
+            <li><a href="#tips" class="nav-link">Health Tips</a></li>
+            <li><a href="#appointment" class="nav-link">Appointment Booking</a></li>
+            <li><a href="#emergency" class="nav-link">Emergency Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="card welcome-card">
+                <h1>Welcome to Smart Healthcare Assistant Portal</h1>
+                <p>Your one-stop solution for health management, advice, and emergency support.</p>
+            </div>
+        </section>
+        <!-- Symptom Checker Section -->
+        <section id="symptom-checker" class="section">
+            <div class="card">
+                <h2>Symptom Checker</h2>
+                <form id="symptomForm">
+                    <label for="symptom">Select Symptom:</label>
+                    <select id="symptom" required>
+                        <option value="">--Choose--</option>
+                        <option value="fever">Fever</option>
+                        <option value="cough">Cough</option>
+                        <option value="headache">Headache</option>
+                        <option value="stomachache">Stomachache</option>
+                        <option value="fatigue">Fatigue</option>
+                        <option value="rash">Rash</option>
+                    </select>
+                    <button type="submit">Check</button>
+                </form>
+                <div id="symptomResult"></div>
+            </div>
+        </section>
+        <!-- BMI Calculator Section -->
+        <section id="bmi" class="section">
+            <div class="card">
+                <h2>BMI Calculator</h2>
+                <form id="bmiForm">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" min="50" max="250" required>
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" min="10" max="300" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="bmiResult"></div>
+            </div>
+        </section>
+        <!-- Health Tips Section -->
+        <section id="tips" class="section">
+            <div class="card">
+                <h2>Daily Health Tip</h2>
+                <div id="healthTip"></div>
+                <button id="newTip">Show Another Tip</button>
+            </div>
+        </section>
+        <!-- Appointment Booking Section -->
+        <section id="appointment" class="section">
+            <div class="card">
+                <h2>Book a Doctor Appointment</h2>
+                <form id="appointmentForm">
+                    <label for="patientName">Name:</label>
+                    <input type="text" id="patientName" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required>
+                    <button type="submit">Book Appointment</button>
+                </form>
+                <div id="appointmentResult"></div>
+            </div>
+        </section>
+        <!-- Emergency Contact Section -->
+        <section id="emergency" class="section">
+            <div class="card emergency-card">
+                <h2>Emergency Contacts</h2>
+                <ul class="emergency-list">
+                    <li><strong>Ambulance:</strong> 102</li>
+                    <li><strong>Fire:</strong> 101</li>
+                    <li><strong>Police:</strong> 100</li>
+                    <li><strong>National Emergency:</strong> 112</li>
+                </ul>
+                <button class="call-btn" onclick="alert('Dialing Emergency Number...')">Call Emergency</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
